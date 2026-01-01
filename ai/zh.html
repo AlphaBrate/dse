@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 配置 | AlphaBrate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0071e3',
+                        coreBg: '#fbfbfb',
+                        coreText: '#1d1d1f',
+                        coreMuted: '#86868b',
+                        coreBorder: '#e5e5e7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-coreBg text-coreText antialiased px-6 md:px-12 lg:px-32; font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+            h1 { @apply text-4xl md:text-5xl font-bold mb-8 pt-32 text-coreText; }
+            h2 { @apply text-xl font-bold mt-16 mb-6 pb-2 border-b border-coreBorder text-coreText tracking-wide; }
+            h3 { @apply text-base font-bold mb-3 text-coreText; }
+            p { @apply mb-5 leading-relaxed text-base text-coreMuted font-medium max-w-4xl; }
+            strong { @apply text-coreText font-semibold; }
+            
+            /* Fixed List Logic */
+            ul { @apply mb-8 max-w-4xl space-y-4 list-none; }
+            li { @apply text-sm text-coreMuted font-medium leading-relaxed relative pl-6; }
+            li::before { 
+                content: "▪"; 
+                @apply text-brandBlue absolute left-0 top-0 text-lg leading-none; 
+            }
+
+            li.no-bullet::before {
+                content: ""
+            }
+        }
+        
+        .ui-mockup-light { @apply my-8 rounded-2xl border border-coreBorder bg-white p-6 shadow-xl max-w-md overflow-hidden; }
+        .ui-mockup-app { @apply my-8 rounded-[28px] border border-[#e5e5e7] bg-white p-8 shadow-lg max-w-md mx-auto md:mx-0; }
+        .ui-input-app { @apply w-full bg-white border border-[#d2d2d7] rounded-xl py-3 px-4 text-[#1d1d1f] text-sm mb-6 font-mono flex justify-between items-center; }
+        .ui-btn-save-compact { @apply bg-[#0071e3] text-white font-bold py-3 px-8 rounded-full inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity text-sm flex-grow; }
+        .ui-btn-clear-compact { @apply bg-[#f5f5f7] text-[#1d1d1f] font-bold py-3 px-6 rounded-2xl text-sm hover:bg-[#e8e8ed] transition-colors; }
+    </style>
+</head>
+
+<body>
+
+    <nav
+        class="fixed top-0 left-0 w-full z-50 px-8 py-6 backdrop-blur-md flex justify-between items-center border-b border-coreBorder/30 bg-white/50">
+        <a href="../" class="text-lg font-bold">AlphaBrate</a>
+    </nav>
+
+    <main class="pb-32">
+        <header>
+            <h1>AI 配置</h1>
+            <p class="text-coreText font-semibold">為 AlphaBrate for DSE 佈署 OpenRouter 憑證</p>
+            <a class="text-brandBlue hover:underline" href="./index.html">Read English Version</a>
+        </header>
+
+        <section>
+            <h2>1. 獲取憑證</h2>
+            <p>要啟用 AI 引擎，你必須通過 OpenRouter 閘道生成安全的「握手金鑰」(Handshake Key)。</p>
+
+            <ul>
+                <li>前往 <a href="https://openrouter.ai/" class="text-brandBlue hover:underline">openrouter.ai</a> 並點擊
+                    <strong>Create API
+                        Key</strong>。</li>
+                <li class="!list-none !pl-0 py-2 no-bullet">
+                    <div class="flex items-center gap-4 bg-white border border-coreBorder p-4 rounded-2xl w-fit">
+                        <span class="text-[16px] font-bold text-coreMuted">點擊：</span>
+                        <button class="ui-btn-save-compact">Create API Key</button>
+                    </div>
+                </li>
+                <li>使用你偏好的身份提供商進行驗證（建議使用 Google 帳號）。</li>
+                <li>如果系統詢問 "Where did you first hear about us?"，請選擇 <strong>Other / Not Sure</strong>。
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. 配置金鑰參數</h2>
+            <p>請參考以下參數進行設定，以確保在使用記錄中清晰顯示，並保障帳戶安全。</p>
+
+            <div class="ui-mockup-light">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="font-bold text-lg text-coreText">Create Key</span>
+                    <span class="text-coreMuted">✕</span>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-[10px] font-bold mb-1 text-coreMuted">Name (名稱)</label>
+                        <div
+                            class="w-full bg-[#f5f5f7] border border-coreBorder rounded-lg p-3 text-sm text-coreText font-semibold">
+                            AlphaBrate for DSE</div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold mb-1 text-coreMuted">Credit limit (額度限制 - 選填)</label>
+                        <div
+                            class="w-full bg-[#f5f5f7] border border-coreBorder rounded-lg p-3 text-sm text-coreText/20 font-regular">
+                            留空代表不設限</div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold mb-1 text-coreMuted">Reset limit every...
+                            (重置週期)</label>
+                        <div
+                            class="w-full bg-[#f5f5f7] border border-coreBorder rounded-lg p-3 text-sm text-coreText flex justify-between">
+                            <span>N/A</span>
+                            <span>▼</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold mb-1 text-coreMuted">Expiration (過期時間)</label>
+                        <div
+                            class="w-full bg-[#f5f5f7] border border-coreBorder rounded-lg p-3 text-sm text-coreText flex justify-between">
+                            <span>No expiration (永不過期)</span>
+                            <span>▼</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="w-full bg-[#1d1d1f] text-white font-bold py-3 rounded-xl mt-6">Create</button>
+            </div>
+
+            <ul>
+                <li><strong>識別名稱：</strong> 建議將金鑰命名為 <span class="text-coreText font-bold">AlphaBrate for
+                        DSE</span>。這有助於你在分析面板中追蹤使用數據。</li>
+                <li><strong>安全限制：</strong> 若你在公共電腦上操作，我們強烈建議設置具體的 <strong>Expiration</strong> (過期日期)。否則，其他選項請保持留空。</li>
+                <li><strong>最後步驟：</strong> 請立即複製生成的字符串。基於安全原因，完整的 API 金鑰只會顯示一次。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. 本地部署</h2>
+            <p>立即將憑證輸入到 AlphaBrate for DSE 應用程式中。</p>
+
+            <div class="ui-mockup-app">
+                <span class="text-[10px] tracking-widest text-[#86868b] mb-3 block font-bold">API KEY
+                    密鑰</span>
+
+                <div class="ui-input-app">
+                    <span class="text-[#1d1d1f]/40">sk-or-...</span>
+                    <span class="text-[#86868b] text-base opacity-70">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </span>
+                </div>
+
+                <div class="flex gap-3">
+                    <button class="ui-btn-save-compact">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z" />
+                        </svg>
+                        儲存 (Save)
+                    </button>
+                    <button class="ui-btn-clear-compact">清除</button>
+                </div>
+            </div>
+
+            <p>將 <code>sk-or-...</code> 字符串粘貼至欄位內，然後選擇 <strong>Save</strong>。</p>
+        </section>
+
+        <footer
+            class="mt-32 border-t border-coreBorder pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-[9px] font-bold text-coreMuted">© 2026 AlphaBrate.</div>
+        </footer>
+    </main>
+</body>
+
+</html>

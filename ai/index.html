@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Configuration | AlphaBrate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0071e3',
+                        coreBg: '#fbfbfb',
+                        coreText: '#1d1d1f',
+                        coreMuted: '#86868b',
+                        coreBorder: '#e5e5e7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-coreBg text-coreText antialiased px-6 md:px-12 lg:px-32; font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif; }
+            h1 { @apply text-4xl md:text-5xl font-bold mb-8 pt-32 text-coreText; }
+            h2 { @apply text-xl font-bold mt-16 mb-6 pb-2 border-b border-coreBorder text-coreText tracking-wide; }
+            h3 { @apply text-base font-bold mb-3 text-coreText; }
+            p { @apply mb-5 leading-relaxed text-base text-coreMuted font-medium max-w-4xl; }
+            strong { @apply text-coreText font-semibold; }
+            
+            /* Fixed List Logic */
+            ul { @apply mb-8 max-w-4xl space-y-4 list-none; }
+            li { @apply text-sm text-coreMuted font-medium leading-relaxed relative pl-6; }
+            li::before { 
+                content: "▪"; 
+                @apply text-brandBlue absolute left-0 top-0 text-lg leading-none; 
+            }
+
+            li.no-bullet::before {
+                content: ""
+            }
+        }
+        
+        .ui-mockup-light { @apply my-8 rounded-2xl border border-coreBorder bg-white p-6 shadow-xl max-w-md overflow-hidden; }
+        .ui-mockup-app { @apply my-8 rounded-[28px] border border-[#e5e5e7] bg-white p-8 shadow-lg max-w-md mx-auto md:mx-0; }
+        .ui-input-app { @apply w-full bg-white border border-[#d2d2d7] rounded-xl py-3 px-4 text-[#1d1d1f] text-sm mb-6 font-mono flex justify-between items-center; }
+        .ui-btn-save-compact { @apply bg-[#0071e3] text-white font-bold py-3 px-8 rounded-full inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity text-sm flex-grow; }
+        .ui-btn-clear-compact { @apply bg-[#f5f5f7] text-[#1d1d1f] font-bold py-3 px-6 rounded-2xl text-sm hover:bg-[#e8e8ed] transition-colors; }
+    </style>
+</head>
+
+<body>
+
+    <nav
+        class="fixed top-0 left-0 w-full z-50 px-8 py-6 backdrop-blur-md flex justify-between items-center border-b border-coreBorder/30 bg-white/50">
+        <a href="../" class="text-lg font-bold">AlphaBrate</a>
+    </nav>
+
+    <main class="pb-32">
+        <header>
+            <h1>AI Configuration</h1>
+            <p class="text-coreText font-semibold">Provisioning OpenRouter Credentials for AlphaBrate for DSE</p>
+            <a class="text-brandBlue hover:underline" href="./zh.html">閱讀中文版指引</a>
+        </header>
+
+        <section>
+            <h2>1. Credential Acquisition</h2>
+            <p>To enable the AI engine, you must generate a secure handshake key through the
+                OpenRouter gateway.</p>
+
+            <ul>
+                <li>Navigate to <a href="https://openrouter.ai/"
+                        class="text-brandBlue hover:underline">openrouter.ai</a> and click <strong>Create API
+                        Key</strong>.</li>
+                <li class="!list-none !pl-0 py-2 no-bullet">
+                    <div class="flex items-center gap-4 bg-white border border-coreBorder p-4 rounded-2xl w-fit">
+                        <span class="text-[16px] font-bold text-coreMuted">Click:</span>
+                        <button class="ui-btn-save-compact">Create API Key</button>
+                    </div>
+                </li>
+                <li>Authenticate using your preferred identity provider (Google is recommended).</li>
+                <li>If prompted with "Where did you first hear about us?", select <strong>Other / Not Sure</strong>.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Key Provisioning</h2>
+            <p>Follow these parameters to ensure clarity in your usage logs and maintain account security.</p>
+
+            <div class="ui-mockup-light">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="font-bold text-lg text-coreText">Create Key</span>
+                    <span class="text-coreMuted">✕</span>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-[10px] font-bold mb-1 text-coreMuted">Name</label>
+                        <div
+                            class="w-full bg-[#f5f5f7] border border-coreBorder rounded-lg p-3 text-sm text-coreText font-semibold">
+                            AlphaBrate for DSE</div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold mb-1 text-coreMuted">Credit limit
+                            (optional)</label>
+                        <div
+                            class="w-full bg-[#f5f5f7] border border-coreBorder rounded-lg p-3 text-sm text-coreText/20 font-regular">
+                            Leave Blank for Unlimited</div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold mb-1 text-coreMuted">Reset limit
+                            every...</label>
+                        <div
+                            class="w-full bg-[#f5f5f7] border border-coreBorder rounded-lg p-3 text-sm text-coreText flex justify-between">
+                            <span>N/A</span>
+                            <span>▼</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold mb-1 text-coreMuted">Expiration</label>
+                        <div
+                            class="w-full bg-[#f5f5f7] border border-coreBorder rounded-lg p-3 text-sm text-coreText flex justify-between">
+                            <span>No expiration</span>
+                            <span>▼</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="w-full bg-[#1d1d1f] text-white font-bold py-3 rounded-xl mt-6">Create</button>
+            </div>
+
+            <ul>
+                <li><strong>Identification:</strong> We recommend naming the key <span
+                        class="text-coreText font-bold">AlphaBrate for DSE</span>. This makes it easier to track usage
+                    within the analytics dashboard.</li>
+                <li><strong>Security Limits:</strong> If operating on a public computer, we strongly recommend setting a
+                    specific <strong>Expiration</strong> date. Otherwise, leave other boxes blank.</li>
+                <li><strong>Finalization:</strong> Copy the generated string immediately. For security reasons, the full
+                    API key will only be shown to you once.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Local Deployment</h2>
+            <p>Input the credential into the AlphaBrate for DSE app immediately.</p>
+
+            <div class="ui-mockup-app">
+                <span class="text-[10px] tracking-widest text-[#86868b] mb-3 block font-bold">API KEY
+                    密鑰</span>
+
+                <div class="ui-input-app">
+                    <span class="text-[#1d1d1f]/40">sk-or-...</span>
+                    <span class="text-[#86868b] text-base opacity-70">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </span>
+                </div>
+
+                <div class="flex gap-3">
+                    <button class="ui-btn-save-compact">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z" />
+                        </svg>
+                        Save
+                    </button>
+                    <button class="ui-btn-clear-compact">Clear</button>
+                </div>
+            </div>
+
+            <p>Paste the <code>sk-or-...</code> string into the field and select <strong>Save</strong>.</p>
+        </section>
+
+        <footer
+            class="mt-32 border-t border-coreBorder pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-[9px] font-bold text-coreMuted">© 2026 AlphaBrate.</div>
+        </footer>
+    </main>
+</body>
+
+</html>
