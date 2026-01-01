@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | AlphaBrate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0071e3',
+                        coreBg: '#fbfbfb',
+                        coreText: '#1d1d1f',
+                        coreMuted: '#86868b',
+                        coreBorder: '#e5e5e7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-coreBg text-coreText antialiased px-6 md:px-12 lg:px-32; font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif; }
+            h1 { @apply text-4xl md:text-5xl font-bold mb-8 pt-32 text-coreText; }
+            h2 { @apply text-xl font-bold mt-16 mb-6 pb-2 border-b border-coreBorder text-coreText tracking-wide; }
+            h3 { @apply text-base font-bold mb-3 text-coreText; }
+            p { @apply mb-5 leading-relaxed text-base text-coreMuted font-medium max-w-4xl; }
+            strong { @apply text-coreText font-semibold; }
+            ul { @apply mb-8 max-w-4xl space-y-3; }
+            li { @apply flex items-start gap-3 text-sm text-coreMuted font-medium leading-relaxed; }
+            li::before { content: "▪"; @apply text-brandBlue mt-0.5; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav
+        class="fixed top-0 left-0 w-full z-50 px-8 py-6 backdrop-blur-md flex justify-between items-center border-b border-coreBorder/30 bg-white/50">
+        <a href="../" class="text-lg font-bold">AlphaBrate</a>
+        <a href="https://alphabrate.github.io/about/policies/"
+            class="text-[10px] font-bold text-brandBlue border border-brandBlue/20 px-3 py-1 rounded-full hover:bg-brandBlue hover:text-white transition-all">General
+            Policies</a>
+    </nav>
+
+    <main class="pb-32">
+        <header>
+            <h1>Privacy Policy</h1>
+            <p class="text-coreText font-semibold">Technical Data Governance Standards & Disclosure</p>
+            <p class="text-sm">Effective 1 January 2026</p>
+        </header>
+
+        <section>
+            <h2>1. Regulatory Integration & Scope</h2>
+            <p>This Privacy Policy serves as a binding legal addendum to the <strong>AlphaBrate Global Policy
+                    Framework</strong>. It specifically governs the data processing activities conducted within
+                <strong>AlphaBrate for DSE platform</strong>. Users are encouraged to review our overarching commitments at <a
+                    href="https://alphabrate.github.io/about/policies/"
+                    class="text-brandBlue hover:underline">alphabrate.github.io/about/policies/</a>.</p>
+            <p>By utilizing this platform, you acknowledge that you understand the decentralized nature of our service
+                and consent to the local and remote processing protocols defined in this document.</p>
+        </section>
+
+        <section>
+            <h2>2. Data Architecture & Persistence Standards</h2>
+            <p>AlphaBrate adheres to a <strong>Local-First, Decentralized Architecture</strong>. We operate under the
+                principle of Data Sovereignty, where the user retains exclusive control over their generated
+                information. No data is stored on AlphaBrate-owned central servers.</p>
+
+            <h3>2.1 Client-Side Storage Implementation</h3>
+            <p>To facilitate application functionality without centralized oversight, data is stored using the following
+                browser-native technologies:</p>
+            <ul>
+                <li><strong>Web Storage API (localStorage):</strong> Utilized for persistent session states and the
+                    isolation of OpenRouter API credentials. These keys reside strictly within your browser's security
+                    sandbox.</li>
+                <li><strong>IndexedDB:</strong> A client-side transactional database used to maintain structured
+                    academic records, including the "Mistake Book" and "Global Diagnosis" datasets.</li>
+            </ul>
+
+            <h3>2.2 Credential Integrity</h3>
+            <p>AlphaBrate does not employ any backend telemetry to mirror or capture user API keys. Your OpenRouter
+                credentials are only accessed locally to authorize requests directed to the specified inference engines.
+                Failure to secure your browser environment may result in local credential exposure; users are
+                responsible for their device security.</p>
+
+            <h3>2.3 Erasure & Non-Recoverability</h3>
+            <p>In alignment with the "Right to be Forgotten," all user data is entirely within the user's control.
+                Manual clearance of browser site data (cache and cookies) will result in the <strong>immediate and
+                    permanent termination</strong> of all stored progress. AlphaBrate maintains no backups and cannot
+                facilitate data recovery once deleted from the local client.</p>
+        </section>
+
+        <section>
+            <h2>3. Intelligence Engine Processing Protocol</h2>
+            <p>Linguistic evaluation and diagnostic features require the utilization of a remote processing layer.
+                AlphaBrate facilitates this via an integration with the <strong>Xiaomi Mimo-v2-Flash (Free)</strong>
+                model, accessed through the <strong>OpenRouter API Gateway</strong>.</p>
+
+            <h3>3.1 Model Transmission Scope</h3>
+            <p>Data transmission to the LLM (Large Language Model) is strictly limited to the technical requirements of
+                the exercise. This includes student-submitted answers and relevant marking criteria. All communications
+                are protected via encrypted <strong>HTTPS (TLS 1.3)</strong> protocols.</p>
+
+            <h3>3.2 Data Minimization & Privacy Risk</h3>
+            <ul>
+                <li><strong>Anonymized Requests:</strong> AlphaBrate does not transmit personally identifiable
+                    information (PII), biometric data, or persistent hardware identifiers to Xiaomi or OpenRouter.</li>
+                <li><strong>Third-Party Retention Notice:</strong> Since the service utilizes the "Free" tier of the
+                    Xiaomi Mimo-v2-Flash model, data processing is subject to the specific retention and training
+                    policies of the model provider. Users are cautioned against inputting sensitive personal narratives
+                    or confidential information within the practice response fields.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Technical Security & Compliance</h2>
+            <p>AlphaBrate is designed to be tracker-free. We do not employ third-party marketing cookies, cross-site
+                tracking pixels, or user behavior analytics. Technical integrity is enforced through strict
+                <strong>Content Security Policy (CSP)</strong> headers and restricted <strong>Cross-Origin Resource
+                    Sharing (CORS)</strong> configurations to prevent unauthorized data exfiltration.</p>
+        </section>
+
+        <section>
+            <h2>5. Auditability & Contact</h2>
+            <p>Transparency is a core tenet of our governance. The client-side source code responsible for these data
+                handling procedures is available for public security audits via our official GitHub repository.
+                Technical inquiries or vulnerability reports should be directed to the project maintainers through
+                official repository channels.</p>
+        </section>
+
+        <footer
+            class="mt-32 border-t border-coreBorder pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-[9px] font-bold text-coreMuted tracking-widest">
+                © 2026 AlphaBrate.
+            </div>
+            <div class="flex gap-6">
+                <a href="https://openrouter.ai/privacy"
+                    class="text-[9px] font-bold text-brandBlue hover:underline">OpenRouter Privacy</a>
+                <a href="https://www.mi.com/global/about/privacy/"
+                    class="text-[9px] font-bold text-brandBlue hover:underline">Xiaomi Privacy</a>
+            </div>
+        </footer>
+    </main>
+
+</body>
+
+</html>

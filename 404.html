@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found | AlphaBrate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0071e3',
+                        coreBg: '#fbfbfb',
+                        coreText: '#1d1d1f',
+                        coreMuted: '#86868b',
+                        coreBorder: '#e5e5e7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-coreBg text-coreText antialiased px-6 md:px-12 lg:px-32 flex flex-col min-h-screen; font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif; }
+            h1 { @apply text-4xl md:text-5xl font-bold mb-8 pt-32 text-coreText; }
+            h2 { @apply text-xl font-bold mt-16 mb-6 pb-2 border-b border-coreBorder text-coreText; }
+            p { @apply mb-8 leading-relaxed text-base text-coreMuted font-medium max-w-2xl; }
+            strong { @apply text-coreText font-semibold; }
+            .btn-primary { @apply inline-flex items-center justify-center bg-brandBlue text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:opacity-90 active:scale-95; }
+            code { @apply font-mono bg-coreBorder/30 px-1.5 py-0.5 rounded text-coreText break-all; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav
+        class="fixed top-0 left-0 w-full z-50 px-8 py-6 backdrop-blur-md flex justify-between items-center border-b border-coreBorder/30 bg-white/50">
+        <a href="../" class="text-lg font-bold">AlphaBrate</a>
+        <div class="flex items-center gap-4">
+            <span
+                class="text-[10px] font-bold text-coreMuted border border-coreBorder px-3 py-1 rounded-full uppercase">Error
+                404</span>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col justify-center">
+        <header>
+            <span class="text-brandBlue font-bold text-[12px] uppercase mb-4 block">Destination
+                Unknown</span>
+            <h1>The page you’re looking for can’t be found.</h1>
+            <p>The requested resource at <code id="error-path">...</code> may have been moved, deleted, or never existed
+                within the AlphaBrate local-first
+                ecosystem.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="../" class="btn-primary">Return to Home Page</a>
+            </div>
+        </header>
+
+        <section class="mt-16">
+            <h2>Diagnostic Information</h2>
+            <ul class="space-y-4 max-w-4xl">
+                <li class="flex items-start gap-3 text-sm text-coreMuted font-medium leading-relaxed">
+                    <span class="text-brandBlue mt-0.5">▪</span>
+                    <span><strong>Index Failure:</strong> The routing engine was unable to resolve the path
+                        <strong><span class="path-display text-coreText"></span></strong>.</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-coreMuted font-medium leading-relaxed">
+                    <span class="text-brandBlue mt-0.5">▪</span>
+                    <span><strong>Local Isolation:</strong> If this was a deep link to a specific diagnostic result,
+                        remember
+                        that data is stored locally in your browser and cannot be shared via URL.</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer
+        class="mt-32 border-t border-coreBorder pt-8 pb-12 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-[9px] font-bold text-coreMuted">
+            © <span class="year"></span> AlphaBrate.
+        </div>
+        <div class="flex gap-6">
+            <a href="/about/support" class="text-[9px] font-bold text-brandBlue hover:underline">Contact
+                Support</a>
+            <a href="/dse/conditions/" class="text-[9px] font-bold text-brandBlue hover:underline">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        // Update Year
+        document.querySelector(".year").textContent = new Date().getFullYear();
+
+        // Handle Error Path Display
+        const currentPath = window.location.pathname;
+        document.getElementById("error-path").textContent = currentPath;
+        document.querySelector(".path-display").textContent = currentPath;
+    </script>
+</body>
+
+</html>
