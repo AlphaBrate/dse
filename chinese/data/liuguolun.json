@@ -114,8 +114,7 @@
     "QID": "CHI-六國論-008",
     "requires": [{ "type": "knowledge", "topic": "六國論" }],
     "question": [
-      { "text": "蘇洵《六國論》第一句，在結構上起了甚麼作用？" },
-      { "text": "\nA 首尾呼應 \n B 下筆立論 \n C 先抑後揚 \n D 提綱挈領", "score-reference": [0] },
+      { "text": "蘇洵《六國論》第一句，在結構上起了甚麼作用？\nA 首尾呼應 \n B 下筆立論 \n C 先抑後揚 \n D 提綱挈領", "score-reference": [0] },
       { "text": "這樣寫有甚麼效果？", "score-reference": [1] }
     ],
     "score": 5,
