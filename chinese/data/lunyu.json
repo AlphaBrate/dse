@@ -1,6 +1,6 @@
 [
 	{
-		"QID": "CHI-論語-001",
+		"QID": "CHI-論人論孝論君子-001",
 		"requires": [{ "type": "knowledge", "topic": "論語" }],
 		"question": [
 			{ "text": "試解釋以下文句中的粗體字，並把答案寫在橫線上。\n" },
@@ -27,7 +27,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-002",
+		"QID": "CHI-論人論孝論君子-002",
 		"requires": [{ "type": "knowledge", "topic": "論語" }],
 		"question": [
 			{ "text": "試根據文意把以下文句譯為語體文。\n" },
@@ -60,7 +60,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-003",
+		"QID": "CHI-論人論孝論君子-003",
 		"requires": [{ "type": "knowledge", "topic": "論語" }],
 		"question": [
 			{
@@ -85,7 +85,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-004",
+		"QID": "CHI-論人論孝論君子-004",
 		"requires": [{ "type": "knowledge", "topic": "論仁" }],
 		"question": [
 			{
@@ -114,7 +114,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-005",
+		"QID": "CHI-論人論孝論君子-005",
 		"requires": [{ "type": "knowledge", "topic": "論仁" }],
 		"question": [
 			{
@@ -148,7 +148,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-006",
+		"QID": "CHI-論人論孝論君子-006",
 		"requires": [{ "type": "knowledge", "topic": "論仁" }],
 		"question": [
 			{ "text": "「為仁由己，而由人乎哉？」（《論仁》第3則）\n" },
@@ -178,7 +178,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-007",
+		"QID": "CHI-論人論孝論君子-007",
 		"requires": [{ "type": "knowledge", "topic": "論仁" }],
 		"question": [
 			{
@@ -201,7 +201,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-008",
+		"QID": "CHI-論人論孝論君子-008",
 		"requires": [{ "type": "knowledge", "topic": "論孝" }],
 		"question": [
 			{
@@ -230,7 +230,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-009",
+		"QID": "CHI-論人論孝論君子-009",
 		"requires": [{ "type": "knowledge", "topic": "論孝" }],
 		"question": [
 			{ "text": "試綜合《論孝》的內容，判斷以下陳述。\n" },
@@ -259,7 +259,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-010",
+		"QID": "CHI-論人論孝論君子-010",
 		"requires": [{ "type": "knowledge", "topic": "論孝" }],
 		"question": [
 			{
@@ -296,7 +296,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-011",
+		"QID": "CHI-論人論孝論君子-011",
 		"requires": [{ "type": "knowledge", "topic": "論君子" }],
 		"question": [
 			{
@@ -319,7 +319,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-012",
+		"QID": "CHI-論人論孝論君子-012",
 		"requires": [{ "type": "knowledge", "topic": "論君子" }],
 		"question": [
 			{ "text": "根據《論君子》，為甚麼君子「不憂不懼」？\n" },
@@ -333,7 +333,7 @@
 		"answer": [{ "text": "A", "label": "point", "score": 2 }]
 	},
 	{
-		"QID": "CHI-論語-013",
+		"QID": "CHI-論人論孝論君子-013",
 		"requires": [{ "type": "knowledge", "topic": "論君子" }],
 		"question": [
 			{
@@ -364,7 +364,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-014",
+		"QID": "CHI-論人論孝論君子-014",
 		"requires": [{ "type": "knowledge", "topic": "論君子" }],
 		"question": [
 			{
@@ -377,7 +377,7 @@
 		"answer": [{ "text": "D", "label": "point", "score": 2 }]
 	},
 	{
-		"QID": "CHI-論語-015",
+		"QID": "CHI-論人論孝論君子-015",
 		"requires": [{ "type": "knowledge", "topic": "論君子" }],
 		"question": [
 			{
@@ -400,7 +400,7 @@
 		]
 	},
 	{
-		"QID": "CHI-論語-016",
+		"QID": "CHI-論人論孝論君子-016",
 		"requires": [
 			{ "type": "knowledge", "topic": "論君子" },
 			{ "type": "knowledge", "topic": "岳陽樓記" }
