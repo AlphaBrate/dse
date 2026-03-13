@@ -102,7 +102,7 @@
 		"question": [
 			{ "text": "荀子笔下的君子有什么特质?\n① 德智兼备\n② 天赋异禀\n③ 举一反三\n④ 经常自省\n" },
 			{
-				"text": "A ①②\n B ①③\n C ①④\nD ②③\n E ③④ ",
+				"text": "A ①②\n B ①③\n C ①④\nD ②③",
 				"score-reference": [0]
 			}
 		],
